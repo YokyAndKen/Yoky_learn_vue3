@@ -1,7 +1,11 @@
 <template>
   <div class="home">
     <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <h1>{{ Num }}</h1>
+    <HelloWorld 
+      msg="Welcome to Your Vue.js App"
+      @click_component="handleChangeNum()"
+    />
   </div>
 </template>
 
@@ -13,6 +17,17 @@ export default {
   name: 'HomeView',
   components: {
     HelloWorld
+  },
+  state : {
+    Num : 0
+  },
+
+  methods: {
+      handleChangeNum() {
+        console.log("lyx" , "click_component at App.vue");
+        Num++;
+      }
+    //
   }
 }
 </script>
